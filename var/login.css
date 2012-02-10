@@ -1,0 +1,492 @@
+/*
+-------------------------------------------------------------------
+
+		LIFE stylesheet
+
+		verde pieno: 	#6C6
+		verde sfondo:	#ADE3AC
+		rosso:			#C00
+		arancio:		#F93
+		blu:			#09C
+		fuxia:			#C0C
+
+-------------------------------------------------------------------
+*/
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	background: #FFFBC6;
+	background-image: url("default_images/life_sfondo_mattino.gif");
+	background-position: top;
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+}
+#main {
+	width: 780px;
+	text-align: left;
+	left:200px;
+	margin: 0 auto;
+	position:absolute;
+	
+}
+a {
+	text-decoration: none;
+	color: #666;
+}
+a:hover {
+	color: #6C6;
+}
+/*
+-------------------------------------------------------------------
+					TYPOGRAPHY
+-------------------------------------------------------------------
+*/
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 17px;
+}
+ul, ol {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 13px;
+	margin: 10px 50px 10px 50px;
+	padding: 0 25px;
+}
+li {
+	margin: 0;
+	padding: 3px 0;
+}
+ul li {
+	list-style-type: square;
+}
+hr {
+	border: 1px solid #ddd;
+}
+/*
+-------------------------------------------------------------------
+					MAIN MENU
+-------------------------------------------------------------------
+*/
+#mainmenu {
+	position: absolute;
+	background-color:transparent;
+	top: 0px;
+	width: 740px;
+	height: 250px;
+	background: url("default_images/life_main_mattino.png") no-repeat bottom;
+}
+#mainmenu.openingmenu {
+	padding: 40px 0 25px 40px;
+}
+.mainmenugroup {
+	width: 155px;
+	border-left: 3px solid #6C6;
+	height: 280px;
+	position: absolute;
+}
+.mainmenugroup h3 {
+	text-align: left;
+	font-size: 10px;
+	color: #6C6;
+	margin: 0 0 0 5px;
+	padding: 0;
+}
+
+.last {
+	border-right: none;
+	width: 100px;
+}
+
+.mainmenugroup_item {
+	width: 155px;
+	height: 23px;
+	position: absolute;
+}
+
+.mainmenugroup_item a {
+	font-size: 11px;
+	height: 17px;
+	display: block;
+}
+
+.mainmenugroup_item a.rossorx, .mainmenugroup a.blurx, .mainmenugroup a.aranciorx, .mainmenugroup a.fuxiarx {
+	text-align: left;
+	padding: 3px 0 0 23px;
+}
+.mainmenugroup_item a.rossolx, .mainmenugroup a.blulx, .mainmenugroup a.aranciolx, .mainmenugroup a.fuxialx {
+	text-align: right;
+	padding: 3px 23px 0 0;
+}
+.mainmenugroup_item a.rossorx {
+	background: url("default_images/fiore_rossorx.png") no-repeat left;
+}
+.mainmenugroup_item a.rossolx {
+	background: url("default_images/fiore_rossolx.png") no-repeat right;
+}
+.mainmenugroup_item a.rossorx:hover, .mainmenugroup a.rossolx:hover {
+	color: #c00;
+}
+.mainmenugroup_item a.blurx {
+	background: url("default_images/fiore_blurx.png") no-repeat left;
+}
+.mainmenugroup_item a.blulx {
+	background: url("default_images/fiore_blulx.png") no-repeat right;
+}
+.mainmenugroup_item a.blurx:hover, .mainmenugroup a.blulx:hover {
+	color: #09c;
+}
+.mainmenugroup_item a.aranciorx {
+	background: url("default_images/fiore_aranciorx.png") no-repeat left;
+}
+.mainmenugroup_item a.aranciolx {
+	background: url("default_images/fiore_aranciolx.png") no-repeat right;
+}
+.mainmenugroup_item a.aranciorx:hover, .mainmenugroup a.aranciolx:hover {
+	color: #f93;
+}
+.mainmenugroup_item a.fuxiarx {
+	background: url("default_images/fiore_fuxiarx.png") no-repeat left;
+}
+.mainmenugroup_item a.fuxialx {
+	background: url("default_images/fiore_fuxialx.png") no-repeat right;
+}
+.mainmenugroup_item a.fuxiarx:hover, .mainmenugroup a.fuxialx:hover {
+	color: #c0c;
+}
+/*
+-------------------------------------------------------------------
+					CONTENT
+-------------------------------------------------------------------
+*/
+#content {
+	padding: 5px 20px;
+	background-color: #66CC66;
+	text-align: center;
+	position: absolute;
+	width: 740px;
+}
+.box {
+	background-color: white;
+	margin: 10px 0 10px 0;
+	padding: 20px;
+	-moz-border-radius: 10px;
+	position: relative;
+}
+.login {
+	width: 270px;
+	margin: auto;
+}
+
+.divPANverde{
+	padding: 5px;
+	border:3px solid #66cc66;
+	width:500px;
+	text-align:center; 
+	background-color:#ddf2d6;
+	
+}
+
+.divPANverde01{
+	padding: 5px;
+	border:3px solid #66cc66;
+	width:100px;
+	text-align:center; 
+	background-color:#ddf2d6;
+	
+}
+
+.divPANbianco{
+	padding:15px;
+	border:1px solid #66cc66;
+	width:auto;
+	text-align:left; 
+	background-color:#FFFFFF;
+}
+
+.stepATTIVO{
+	border:8px solid #66cc66;
+	-moz-border-radius:60px;
+	margin: 0px 0px 0px 10px;
+	width:60px;
+	height:60px;
+	background-color:#3399FF;
+}
+
+.stepPASSIVO{
+	border:8px solid #66cc66;
+	-moz-border-radius:30px;
+	margin:0px 0px 0px 10px;
+	width:30px;
+	height:30px;
+	background-color:#ffdfaa;
+}
+
+.stepCONNECT{
+	-moz-border-radius:30px;
+	margin:-5px 0px -5px 11px;
+	width:8px;
+	height:40px;
+	background-color:#66cc66;
+}
+
+#content p {
+	padding: 0;
+	margin: 5px 0;
+}
+#content h1 {
+	color: white;
+	font-size: 32px;
+	text-align: left;
+	margin: 0;
+	padding: 3px 0 0 0;
+}
+#content.rosso h1, #content.arancio h1, #content.blu h1, #content.fuxia h1 {
+	padding: 3px 0 0 48px;
+}
+#content.rosso h1 {
+	background: url("default_images/titolo-rosso.gif") no-repeat left;
+}
+#content.arancio h1 {
+	background: url("default_images/titolo-arancio.gif") no-repeat left;
+}
+#content.blu h1 {
+	background: url("default_images/titolo-blu.gif") no-repeat left;
+}
+#content.fuxia h1 {
+	background: url("default_images/titolo-fuxia.gif") no-repeat left;
+}
+#content h2 {
+	color: #6C6;
+	font-size: 20px;
+	padding: 0;
+	margin: 0;
+}
+#content h3 {
+	color: #666;
+	font-size: 19px;
+	font-weight: normal;
+	padding: 0;
+}
+.tools {
+	float: right;
+	width: 200px;
+}
+.tools a {
+	display: block;
+	padding: 4px 0px 4px 25px;
+	font-size: 11px;
+	background-color: #eee;
+	margin: 0 0 2px 0;
+}
+.tools a:hover {
+	background-color: #ddd;
+	color: black;
+}
+.tools a.link-rosso, .tools a.link-arancio, .tools a.link-blu, .tools a.link-fuxia {
+	background-position: 3px;
+	background-repeat: no-repeat;
+}
+.tools a.link-rosso {
+	background-image: url("default_images/fiore_rossolx.gif");
+}
+.tools a.link-arancio {
+	background-image: url("default_images/fiore_aranciolx.gif");
+}
+.tools a.link-blu {
+	background-image: url("default_images/fiore_blulx.gif");
+}
+.tools a.link-fuxia {
+	background-image: url("default_images/fiore_fuxialx.gif");
+}
+/*
+-------------------------------------------------------------------
+					FOOTER
+-------------------------------------------------------------------
+*/
+#footer {
+
+	text-align: center;
+	background-color: #6C6;
+	position: relative;
+	top: 10px;
+	width: 780px;
+	-moz-border-radius-bottomright: 20px;
+	-moz-border-radius-bottomleft: 20px;
+}
+#footer p {
+	color: white;
+	font-size: 11px;
+	padding: 0;
+	margin: 0;
+}
+#footer a {
+	color: white;
+	padding: 0 5px;
+}
+#footer a:hover {
+	color: #ff6;
+	text-decoration: underline;
+}
+/*
+-------------------------------------------------------------------
+					FORM
+-------------------------------------------------------------------
+*/
+form {
+	text-align: right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+label {
+	display: block;
+	margin: 0 0 10px 0;
+}
+label:hover {
+	color: #6C6;
+}
+input, select, textarea {
+	margin: 0 8px;
+	padding: 2px;
+	width: 140px;
+	border: 1px solid #ddd;
+	background-color: #eee;
+	font-size: 11px;
+}
+textarea {
+	width: 200px;
+}
+input:focus, select:focus {
+	background-color: white;
+}
+input.pulsante {
+	border: 0;
+	background-color: #aaa;
+	color: white;
+	width: 80px;
+	padding: 3px;
+	margin: 10px 8px;
+	font-size: 10px;
+}
+input.pulsante:hover {
+	background-color: #6C6;
+}
+/*
+-------------------------------------------------------------------
+					TABLE
+-------------------------------------------------------------------
+*/
+table {
+	width: 100%;
+	
+}
+td {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 10px;
+	padding: 1px 3px;
+	
+}
+tr.head td {
+	font-weight: bold;
+}
+tr.pari{ 
+	vertical-align:top; 
+	background-color:#D9F3D6; 
+	}
+tr.dispari{ 
+	vertical-align:top; 
+	background-color:#F1FBF0; 
+	}
+/*
+-------------------------------------------------------------------
+*/
+
+t
+/*
+-------------------------------------------------------------------
+					VARI LIFE
+-------------------------------------------------------------------
+*/
+.serverMessageNormal {
+	font-family: arial;
+	font-weight: bold;
+	font-size: 11px;
+	color:#080;
+}
+.serverMessageError {
+	font-family: arial;
+	font-weight: bold;
+	font-size: 11px;
+	color:#C00;
+}
+.formRegisterInputnormal {
+ color:#080;
+ line-height: 15px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.formRegisterInputmandatory {
+ color:#C00;
+ line-height: 15px;
+	border-bottom: 1px solid #e0e0e0;
+}
+.formRegisterline{
+ line-height: 15px;
+	border-bottom: 1px solid #e0e0e0;
+}
+/*
+-------------------------------------------------------------------
+*/
+
+
+/*
+-------------------------------------------------------------------
+					VARI LAYER
+-------------------------------------------------------------------
+*/
+
+.layerWindow {
+	position:absolute;
+	top:200px;
+	left:10px;
+	border:solid 2px;
+	background-color:#ffffff;
+	visibility: hidden; 
+}
+/*
+-------------------------------------------------------------------
+					INVENTARIO
+-------------------------------------------------------------------
+*/
+
+.titolo {
+
+	position:relative; 
+	top:0px; 
+	font:Verdana, Arial, Helvetica, sans-serif; 
+	color:#66cc66; 
+	font-size:16px; 
+}
+
+.titolo2 {
+
+	position:relative; 
+	top:0px; 
+	font:Verdana, Arial, Helvetica, sans-serif; 
+	color:#66cc66; 
+	font-size:16px; 
+}
+
+.DIVstory {
+	top:40px; 
+	position:relative;
+
+}
+
+
+
+
